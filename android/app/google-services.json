@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "716738946964",
+    "project_id": "loginwithsqflite",
+    "storage_bucket": "loginwithsqflite.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716738946964:android:4dc9ecbac5e4df3717d181",
+        "android_client_info": {
+          "package_name": "example.up.sign.loyd.app.example.flutter.com.signupexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716738946964-2j55hmikj28ph96rac2gshsv2g5rkev9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw2gd_bbOOGMG4yPG0Kgxppnlno19Y0kg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716738946964-2j55hmikj28ph96rac2gshsv2g5rkev9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
