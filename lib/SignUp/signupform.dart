@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SignUpForm extends StatefulWidget {
   SignUpForm(
@@ -102,7 +103,7 @@ class _SignUpForm extends State<SignUpForm>
                   hintText: 'Type your email'),
               validator: (String value) {
                 if (value.trim().isEmpty) {
-                  return 'Nickname is required';
+                  return 'Email is required';
                 } else {
                   return null;
                 }
@@ -110,7 +111,7 @@ class _SignUpForm extends State<SignUpForm>
               controller: widget.emailTextController,
             ),
           ),
-          Divider(),
+          // Divider(),
           SizedBox(
             width: 360,
             child: TextFormField(
@@ -130,7 +131,7 @@ class _SignUpForm extends State<SignUpForm>
               controller: widget.passwordTextController,
             ),
           ),
-          Divider(),
+          // Divider(),
           SizedBox(
             width: 360,
             child: TextFormField(
@@ -149,26 +150,30 @@ class _SignUpForm extends State<SignUpForm>
               controller: widget.nameTextController,
             ),
           ),
-          Divider(),
+          // Divider(),
           SizedBox(
             width: 360,
             child: TextFormField(
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  icon: Icon(Icons.account_circle),
+                  icon: Icon(Icons.contact_phone),
                   labelText: 'emergency Contact',
                   hintText: 'Emergency contact'),
               validator: (String value) {
                 if (value.trim().isEmpty) {
-                  return 'Nickname is required';
+                  return 'Emergency contact is required';
                 } else {
                   return null;
                 }
               },
               controller: widget.emergencycontactTextController,
+              keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.digitsOnly
+              ],
             ),
           ),
-          Divider(),
+          // Divider(),
           Row(
             children: <Widget>[
               Icon(
@@ -220,7 +225,7 @@ class _SignUpForm extends State<SignUpForm>
               ),
             ],
           ),
-          Divider(),
+          // Divider(),
           SizedBox(
             width: 360,
             child: Row(
@@ -249,21 +254,24 @@ class _SignUpForm extends State<SignUpForm>
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Checkbox(
-                value: _agreedToTerm,
-                onChanged: _setAgreedToTerm,
-              ),
-              GestureDetector(
-                onTap: () => _setAgreedToTerm(!_agreedToTerm),
-                child: const Text(
-                  'I agree to Terms of Services, Privacy Policy',
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Checkbox(
+                  value: _agreedToTerm,
+                  onChanged: _setAgreedToTerm,
                 ),
-              ),
-            ],
+                GestureDetector(
+                  onTap: () => _setAgreedToTerm(!_agreedToTerm),
+                  child: const Text(
+                    'I agree to Terms of Services, Privacy Policy',
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
